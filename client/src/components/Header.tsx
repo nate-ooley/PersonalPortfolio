@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 interface HeaderProps {
   activeSection: string;
@@ -11,6 +11,8 @@ interface HeaderProps {
 export function Header({ activeSection }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [location] = useLocation();
+  const isHomePage = location === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +45,12 @@ export function Header({ activeSection }: HeaderProps) {
     { name: "Contact", href: "#contact" },
   ];
 
+  // This helps us handle both SPA navigation for the home page
+  // and multi-page navigation for blog and other pages
+  const getNavLinkUrl = (link: { name: string; href: string }) => {
+    return isHomePage ? link.href : `/${link.href}`;
+  };
+
   return (
     <header 
       className={cn(
@@ -51,27 +59,44 @@ export function Header({ activeSection }: HeaderProps) {
       )}
     >
       <div className="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
-        <a href="#home" className="text-xl font-bold text-gray-900 flex items-center gap-2">
+        <Link href="/" className="text-xl font-bold text-gray-900 flex items-center gap-2">
           <Logo className="text-xl" />
-        </a>
+        </Link>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className={cn(
-                "font-medium transition-colors",
-                activeSection === link.href.substring(1)
-                  ? "text-primary"
-                  : "text-gray-700 hover:text-primary"
-              )}
+          {isHomePage ? (
+            // When on the home page, use anchor links
+            navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "font-medium transition-colors",
+                  activeSection === link.href.substring(1)
+                    ? "text-primary"
+                    : "text-gray-700 hover:text-primary"
+                )}
+              >
+                {link.name}
+              </a>
+            ))
+          ) : (
+            // When not on the home page, use the root link
+            <Link 
+              href="/" 
+              className="font-medium text-gray-700 hover:text-primary transition-colors"
             >
-              {link.name}
-            </a>
-          ))}
-          <Link href="/blog" className="font-medium text-gray-700 hover:text-primary transition-colors">
+              Home
+            </Link>
+          )}
+          <Link 
+            href="/blog" 
+            className={cn(
+              "font-medium transition-colors",
+              location === "/blog" ? "text-primary" : "text-gray-700 hover:text-primary"
+            )}
+          >
             Blog
           </Link>
         </nav>
@@ -99,24 +124,39 @@ export function Header({ activeSection }: HeaderProps) {
             className="md:hidden bg-white overflow-hidden"
           >
             <div className="container mx-auto px-4 py-3 space-y-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
+              {isHomePage ? (
+                // When on the home page, use anchor links
+                navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={closeMenu}
+                    className={cn(
+                      "block font-medium py-2 transition-colors",
+                      activeSection === link.href.substring(1)
+                        ? "text-primary"
+                        : "text-gray-700 hover:text-primary"
+                    )}
+                  >
+                    {link.name}
+                  </a>
+                ))
+              ) : (
+                // When not on the home page, use the root link
+                <Link 
+                  href="/" 
+                  className="block font-medium py-2 text-gray-700 hover:text-primary transition-colors"
                   onClick={closeMenu}
-                  className={cn(
-                    "block font-medium py-2 transition-colors",
-                    activeSection === link.href.substring(1)
-                      ? "text-primary"
-                      : "text-gray-700 hover:text-primary"
-                  )}
                 >
-                  {link.name}
-                </a>
-              ))}
+                  Home
+                </Link>
+              )}
               <Link 
                 href="/blog" 
-                className="block font-medium py-2 text-gray-700 hover:text-primary transition-colors"
+                className={cn(
+                  "block font-medium py-2 transition-colors",
+                  location === "/blog" ? "text-primary" : "text-gray-700 hover:text-primary"
+                )}
                 onClick={closeMenu}
               >
                 Blog
