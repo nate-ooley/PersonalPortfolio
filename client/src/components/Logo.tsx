@@ -262,7 +262,7 @@ export function Logo({ className }: LogoProps) {
           } : {}}
           transition={{ duration: 1 }}
         >
-          Nathan Ooley
+          
         </motion.span>
         
         {/* Hidden counter for debugging */}
