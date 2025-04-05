@@ -253,6 +253,89 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   });
   
+  // Get client projects for the authenticated user
+  app.get("/api/client-projects", (req, res, next) => {
+    // Check if user is authenticated
+    if (!req.isAuthenticated()) {
+      return res.status(401).json({
+        success: false,
+        message: "Authentication required to view client projects"
+      });
+    }
+    
+    // Continue if authenticated
+    next();
+  }, async (req, res) => {
+    try {
+      // If the user is an admin, get all projects, otherwise only get projects for the client
+      let projects;
+      if (req.user?.role === 'admin') {
+        projects = await storage.getClientProjects();
+      } else {
+        projects = await storage.getClientProjectsForClient(req.user!.id);
+      }
+      
+      return res.status(200).json({
+        success: true,
+        data: projects
+      });
+    } catch (error) {
+      console.error("Error fetching client projects:", error);
+      return res.status(500).json({
+        success: false,
+        message: "Failed to fetch client projects. Please try again later."
+      });
+    }
+  });
+  
+  // Get specific client project by ID
+  app.get("/api/client-projects/:id", (req, res, next) => {
+    // Check if user is authenticated
+    if (!req.isAuthenticated()) {
+      return res.status(401).json({
+        success: false,
+        message: "Authentication required to view client projects"
+      });
+    }
+    
+    // Continue if authenticated
+    next();
+  }, async (req, res) => {
+    try {
+      const projectId = parseInt(req.params.id);
+      
+      // Get the project
+      const project = await storage.getClientProject(projectId);
+      
+      // If project doesn't exist, return 404
+      if (!project) {
+        return res.status(404).json({
+          success: false,
+          message: "Project not found"
+        });
+      }
+      
+      // Check if user has access to this project (either admin or the client)
+      if (req.user?.role !== 'admin' && project.clientId !== req.user?.id) {
+        return res.status(403).json({
+          success: false,
+          message: "You don't have permission to view this project"
+        });
+      }
+      
+      return res.status(200).json({
+        success: true,
+        data: project
+      });
+    } catch (error) {
+      console.error("Error fetching client project:", error);
+      return res.status(500).json({
+        success: false,
+        message: "Failed to fetch client project. Please try again later."
+      });
+    }
+  });
+  
   const httpServer = createServer(app);
   return httpServer;
 }

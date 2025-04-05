@@ -86,22 +86,50 @@ export function setupAuth(app: Express) {
   // Authentication routes
   app.post("/api/register", async (req, res, next) => {
     try {
-      const existingUser = await storage.getUserByUsername(req.body.username);
-      if (existingUser) {
+      // Check for validation errors
+      if (!req.body.username || !req.body.password || !req.body.email || !req.body.fullName) {
+        return res.status(400).json({ 
+          success: false, 
+          message: "All fields are required: username, password, email, and fullName" 
+        });
+      }
+      
+      // Check for existing username
+      const existingUsername = await storage.getUserByUsername(req.body.username);
+      if (existingUsername) {
         return res.status(400).json({ success: false, message: "Username already exists" });
       }
+      
+      // Check for existing email (would require adding a getUserByEmail method to storage)
+      // For now, this is handled by the database constraint
 
+      // Create the user
       const user = await storage.createUser({
-        ...req.body,
+        username: req.body.username,
         password: await hashPassword(req.body.password),
+        email: req.body.email,
+        fullName: req.body.fullName,
+        role: 'client', // Default role for new registrations
       });
 
+      // Log the user in
       req.login(user, (err) => {
         if (err) return next(err);
-        res.status(201).json(user);
+        
+        // Return user data without password
+        const { password, ...userData } = user;
+        res.status(201).json(userData);
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error("Registration error:", error);
+      
+      // Check for database constraint violation (likely duplicate email)
+      if (error.message && error.message.includes('duplicate key value violates unique constraint')) {
+        if (error.message.includes('email')) {
+          return res.status(400).json({ success: false, message: "Email already registered" });
+        }
+      }
+      
       res.status(500).json({ success: false, message: "Server error during registration" });
     }
   });
@@ -114,7 +142,10 @@ export function setupAuth(app: Express) {
       }
       req.login(user, (err) => {
         if (err) return next(err);
-        res.status(200).json(user);
+        
+        // Return user data without password
+        const { password, ...userData } = user;
+        res.status(200).json(userData);
       });
     })(req, res, next);
   });
@@ -128,6 +159,9 @@ export function setupAuth(app: Express) {
 
   app.get("/api/user", (req, res) => {
     if (!req.isAuthenticated()) return res.status(401).json({ success: false, message: "Not authenticated" });
-    res.json(req.user);
+    
+    // Return user data without password
+    const { password, ...userData } = req.user;
+    res.json(userData);
   });
 }

@@ -7,6 +7,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import BlogPage from "@/pages/blog-page";
 import AuthPage from "@/pages/auth-page";
+import ClientDashboard from "@/pages/client-dashboard";
 import { AuthProvider } from "@/hooks/use-auth";
 import { ProtectedRoute } from "@/lib/protected-route";
 
@@ -17,6 +18,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/blog" component={BlogPage} />
         <Route path="/auth" component={AuthPage} />
+        <ProtectedRoute path="/dashboard" component={ClientDashboard} />
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>

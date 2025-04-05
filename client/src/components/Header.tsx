@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 import { Link, useLocation } from "wouter";
+import { useAuth } from "@/hooks/use-auth";
 
 interface HeaderProps {
   activeSection: string;
@@ -13,6 +14,7 @@ export function Header({ activeSection }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();
   const isHomePage = location === "/";
+  const { user } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,6 +101,27 @@ export function Header({ activeSection }: HeaderProps) {
           >
             Blog
           </Link>
+          {user ? (
+            <Link 
+              href="/dashboard" 
+              className={cn(
+                "font-medium transition-colors",
+                location === "/dashboard" ? "text-primary" : "text-gray-700 hover:text-primary"
+              )}
+            >
+              Dashboard
+            </Link>
+          ) : (
+            <Link 
+              href="/auth" 
+              className={cn(
+                "font-medium transition-colors",
+                location === "/auth" ? "text-primary" : "text-gray-700 hover:text-primary"
+              )}
+            >
+              Client Login
+            </Link>
+          )}
         </nav>
         
         {/* Mobile Menu Button */}
@@ -161,6 +184,29 @@ export function Header({ activeSection }: HeaderProps) {
               >
                 Blog
               </Link>
+              {user ? (
+                <Link 
+                  href="/dashboard" 
+                  className={cn(
+                    "block font-medium py-2 transition-colors",
+                    location === "/dashboard" ? "text-primary" : "text-gray-700 hover:text-primary"
+                  )}
+                  onClick={closeMenu}
+                >
+                  Dashboard
+                </Link>
+              ) : (
+                <Link 
+                  href="/auth" 
+                  className={cn(
+                    "block font-medium py-2 transition-colors",
+                    location === "/auth" ? "text-primary" : "text-gray-700 hover:text-primary"
+                  )}
+                  onClick={closeMenu}
+                >
+                  Client Login
+                </Link>
+              )}
             </div>
           </motion.div>
         )}
