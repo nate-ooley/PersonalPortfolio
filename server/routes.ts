@@ -131,13 +131,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
-  // Create new blog post
-  app.post("/api/blog", async (req, res) => {
+  // Create new blog post (requires authentication)
+  app.post("/api/blog", (req, res, next) => {
+    // Check if user is authenticated
+    if (!req.isAuthenticated()) {
+      return res.status(401).json({
+        success: false,
+        message: "Authentication required to create blog posts"
+      });
+    }
+    
+    // Continue if authenticated
+    next();
+  }, async (req, res) => {
     try {
-      const { title, content, excerpt, published, coverImage, tags, authorId } = req.body;
+      const { title, content, excerpt, published, coverImage, tags } = req.body;
       
       // Generate slug from title
       const slug = generateSlug(title);
+      
+      // Use the authenticated user's ID as the author
+      const authorId = req.user?.id;
       
       // Create new blog post
       const newPost = await storage.createBlogPost({
@@ -164,8 +178,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
-  // Generate blog post with AI
-  app.post("/api/blog/generate", async (req, res) => {
+  // Generate blog post with AI (requires authentication)
+  app.post("/api/blog/generate", (req, res, next) => {
+    // Check if user is authenticated
+    if (!req.isAuthenticated()) {
+      return res.status(401).json({
+        success: false,
+        message: "Authentication required to generate blog posts"
+      });
+    }
+    
+    // Continue if authenticated
+    next();
+  }, async (req, res) => {
     try {
       const blogGenerationRequest: BlogGenerationRequest = req.body;
       
