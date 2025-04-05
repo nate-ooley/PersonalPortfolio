@@ -141,14 +141,22 @@ export const aboutData = {
 
 // Skills data
 export const skillsData = [
-  "UI/UX Design",
-  "Product Design",
-  "Brand Identity",
-  "Photography",
-  "Figma",
-  "Adobe Creative Suite",
-  "Webflow",
-  "HTML/CSS"
+  // Development Skills
+  "Full-Stack Development",
+  "Cloud Architecture",
+  "Network Security",
+  "Mobile App Development",
+  "API Development",
+  
+  // Sailing Skills
+  "Open Water Navigation",
+  "Coastal Cruising",
+  "Racing Techniques",
+  
+  // Photography Skills
+  "Landscape Photography",
+  "Portrait Photography",
+  "Photo Editing"
 ];
 
 // Contact data

@@ -1,21 +1,30 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, Code, Anchor, Camera } from "lucide-react";
 import { ButtonLink } from "./ui/button-link";
 
 export function About() {
-  const skills = [
-    "Front-end Development",
-    "UX/UI Design",
-    "React & Next.js",
-    "Landscape Photography",
-    "Sailing"
+  const developerSkills = [
+    "Full-Stack Development",
+    "Cloud Architecture",
+    "Mobile App Development",
+    "Network Security",
+    "API Development"
   ];
 
-  const interests = [
-    "Travel Photography",
-    "Web Accessibility",
-    "Coastal Sailing",
-    "Open Source Contributing"
+  const photographySkills = [
+    "Landscape Photography",
+    "Portrait Photography",
+    "Photo Editing",
+    "Drone Photography",
+    "Time-lapse Photography"
+  ];
+  
+  const sailingSkills = [
+    "Open Water Navigation",
+    "Coastal Cruising",
+    "Racing Techniques",
+    "Weather Analysis",
+    "Boat Maintenance"
   ];
 
   return (
@@ -31,7 +40,7 @@ export function About() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Get to know more about me, my background, and what drives my passion for development and photography.
+            Developer. Sailor. Photographer. Three passions that define my approach to life and work.
           </p>
         </motion.div>
         
@@ -50,7 +59,7 @@ export function About() {
                 className="rounded-lg shadow-lg object-cover w-full"
               />
               <div className="absolute bottom-0 right-0 bg-white p-4 shadow-lg rounded-tl-lg rounded-br-lg transform translate-x-4 translate-y-4">
-                <p className="font-bold text-primary">5+ Years Experience</p>
+                <p className="font-bold text-primary">8+ Years Experience</p>
               </div>
             </div>
           </motion.div>
@@ -64,39 +73,62 @@ export function About() {
           >
             <h3 className="text-2xl font-bold mb-4">Who am I?</h3>
             <p className="text-gray-700 mb-4">
-              I'm Nathan Ooley, a passionate developer and photographer with a keen eye for detail. With over 8 years of experience in web development, I specialize in creating responsive, user-friendly websites and applications that combine functionality with aesthetic appeal.
+              I'm Nathan Ooley, a multifaceted professional who thrives at the intersection of technology, adventure, and visual storytelling. My career as a developer has given me the analytical mindset to solve complex problems, while my experiences as a sailor and photographer have taught me the value of patience, perspective, and an eye for detail.
             </p>
             <p className="text-gray-700 mb-6">
-              When I'm not coding, you'll find me exploring coastal waters through sailing or capturing moments through my camera lens. This combination of technical expertise and creative pursuits allows me to approach projects with both precision and vision.
+              This unique combination allows me to approach technical challenges with both precision and creativity, whether I'm developing secure network solutions, crafting intuitive mobile applications, or capturing meaningful moments through my lens.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div>
-                <h4 className="text-lg font-semibold mb-3">Skills</h4>
-                <ul className="space-y-2">
-                  {skills.map((skill, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <span className="text-primary">
-                        <Check className="h-5 w-5" />
+            <div className="space-y-8 mb-8">
+              <div className="flex items-start gap-3">
+                <span className="mt-1 p-2 rounded-full bg-blue-100 text-blue-600">
+                  <Code className="h-5 w-5" />
+                </span>
+                <div>
+                  <h4 className="text-lg font-semibold mb-2">Developer</h4>
+                  <p className="text-gray-600 mb-2">Specializing in full-stack development, cloud solutions, and network security with over 8 years of professional experience.</p>
+                  <div className="flex flex-wrap gap-2">
+                    {developerSkills.map((skill, index) => (
+                      <span key={index} className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">
+                        {skill}
                       </span>
-                      <span>{skill}</span>
-                    </li>
-                  ))}
-                </ul>
+                    ))}
+                  </div>
+                </div>
               </div>
               
-              <div>
-                <h4 className="text-lg font-semibold mb-3">Interests</h4>
-                <ul className="space-y-2">
-                  {interests.map((interest, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <span className="text-primary">
-                        <Check className="h-5 w-5" />
+              <div className="flex items-start gap-3">
+                <span className="mt-1 p-2 rounded-full bg-teal-100 text-teal-600">
+                  <Anchor className="h-5 w-5" />
+                </span>
+                <div>
+                  <h4 className="text-lg font-semibold mb-2">Sailor</h4>
+                  <p className="text-gray-600 mb-2">Passionate about exploring coastal waters and applying the discipline of sailing to both life and professional ventures.</p>
+                  <div className="flex flex-wrap gap-2">
+                    {sailingSkills.map((skill, index) => (
+                      <span key={index} className="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs">
+                        {skill}
                       </span>
-                      <span>{interest}</span>
-                    </li>
-                  ))}
-                </ul>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <span className="mt-1 p-2 rounded-full bg-amber-100 text-amber-600">
+                  <Camera className="h-5 w-5" />
+                </span>
+                <div>
+                  <h4 className="text-lg font-semibold mb-2">Photographer</h4>
+                  <p className="text-gray-600 mb-2">Capturing moments and perspectives that tell compelling visual stories through various photographic styles.</p>
+                  <div className="flex flex-wrap gap-2">
+                    {photographySkills.map((skill, index) => (
+                      <span key={index} className="px-2 py-1 bg-amber-50 text-amber-700 rounded text-xs">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
             

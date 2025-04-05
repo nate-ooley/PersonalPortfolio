@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/button-link";
+import { Code, Anchor, Camera } from "lucide-react";
 
 export function Hero() {
   return (
@@ -15,11 +16,24 @@ export function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Hi, I'm <span className="text-primary">Nathan Ooley</span>
             </h1>
-            <h2 className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-              Developer & Photographer
-            </h2>
+            <div className="flex flex-wrap items-center gap-3 md:gap-5">
+              <div className="flex items-center gap-1">
+                <Code className="h-5 w-5 text-blue-600" />
+                <h2 className="text-xl md:text-2xl text-blue-600 font-medium">Developer</h2>
+              </div>
+              <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+              <div className="flex items-center gap-1">
+                <Anchor className="h-5 w-5 text-teal-600" />
+                <h2 className="text-xl md:text-2xl text-teal-600 font-medium">Sailor</h2>
+              </div>
+              <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+              <div className="flex items-center gap-1">
+                <Camera className="h-5 w-5 text-amber-600" />
+                <h2 className="text-xl md:text-2xl text-amber-600 font-medium">Photographer</h2>
+              </div>
+            </div>
             <p className="text-lg text-gray-700 max-w-xl">
-              I create meaningful digital experiences and capture moments through my lens. Passionate about clean code, sailing, and beautiful imagery.
+              I bring together technical expertise, a sense of adventure, and creative vision to every project. Specializing in secure, intuitive applications and digital solutions.
             </p>
             <div className="pt-4 flex flex-wrap gap-4">
               <ButtonLink href="#portfolio" variant="default">
