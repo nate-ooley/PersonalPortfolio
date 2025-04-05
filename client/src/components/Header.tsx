@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
+import { Link } from "wouter";
 
 interface HeaderProps {
   activeSection: string;
@@ -70,6 +71,9 @@ export function Header({ activeSection }: HeaderProps) {
               {link.name}
             </a>
           ))}
+          <Link href="/blog" className="font-medium text-gray-700 hover:text-primary transition-colors">
+            Blog
+          </Link>
         </nav>
         
         {/* Mobile Menu Button */}
@@ -110,6 +114,13 @@ export function Header({ activeSection }: HeaderProps) {
                   {link.name}
                 </a>
               ))}
+              <Link 
+                href="/blog" 
+                className="block font-medium py-2 text-gray-700 hover:text-primary transition-colors"
+                onClick={closeMenu}
+              >
+                Blog
+              </Link>
             </div>
           </motion.div>
         )}
