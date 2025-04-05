@@ -20,30 +20,80 @@ export const experienceData = [
   }
 ];
 
-// Portfolio data
-export const portfolioData = [
+// Portfolio data - Mobile/Web/Cloud Development Projects
+export const mobileWebCloudProjects = [
   {
-    title: "E-commerce Website Redesign",
-    description: "Complete redesign of an e-commerce platform, focusing on improved user experience and conversion optimization.",
+    title: "Healthcare Patient Portal",
+    description: "Developed a secure, HIPAA-compliant web application to allow patients to access medical records, schedule appointments, and communicate with healthcare providers.",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
+    category: "web",
+    categoryDisplay: "Web Development"
+  },
+  {
+    title: "Logistics Fleet Management App",
+    description: "Built a cross-platform mobile application for tracking delivery vehicles, optimizing routes, and managing driver schedules in real-time.",
+    image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    technologies: ["React Native", "Firebase", "Google Maps API", "Redux"],
+    category: "mobile",
+    categoryDisplay: "Mobile Development"
+  },
+  {
+    title: "E-commerce Microservices Platform",
+    description: "Architected and implemented a cloud-native e-commerce platform using microservices architecture, enabling high scalability and resilience.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    technologies: ["UX Design", "UI Design", "Shopify"],
-    link: "#"
+    technologies: ["Kubernetes", "Docker", "Node.js", "MongoDB", "AWS"],
+    category: "cloud",
+    categoryDisplay: "Cloud Development"
   },
   {
-    title: "Mobile Banking App",
-    description: "Design of a mobile banking application with focus on security, ease of use, and clear data visualization.",
-    image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    technologies: ["Mobile Design", "UI/UX", "Fintech"],
-    link: "#"
-  },
-  {
-    title: "Brand Identity for Startup",
-    description: "Complete branding package including logo design, color palette, typography, and brand guidelines.",
-    image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    technologies: ["Branding", "Logo Design", "Identity"],
-    link: "#"
+    title: "Financial Analytics Dashboard",
+    description: "Created a real-time financial analytics dashboard for investment professionals with complex data visualization and predictive modeling capabilities.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    technologies: ["Vue.js", "D3.js", "Python", "FastAPI", "AWS Lambda"],
+    category: "web",
+    categoryDisplay: "Web Development"
   }
 ];
+
+// Portfolio data - Network Security Projects
+export const networkSecurityProjects = [
+  {
+    title: "Enterprise Network Security Audit",
+    description: "Conducted comprehensive security assessment for a Fortune 500 company, identifying vulnerabilities and implementing remediation strategies.",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    technologies: ["Penetration Testing", "Vulnerability Assessment", "NIST Framework"],
+    category: "network_security",
+    categoryDisplay: "Network Security"
+  },
+  {
+    title: "Zero Trust Architecture Implementation",
+    description: "Designed and deployed a zero trust security model for a multinational organization, enhancing security posture while maintaining operational efficiency.",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    technologies: ["Zero Trust", "Identity Management", "Micro-segmentation", "Cloud Security"],
+    category: "network_security",
+    categoryDisplay: "Network Security"
+  },
+  {
+    title: "Incident Response System",
+    description: "Developed an automated incident response system that significantly reduced threat detection and remediation time for a healthcare provider.",
+    image: "https://images.unsplash.com/photo-1563986768817-257bf91c5e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    technologies: ["SIEM", "SOAR", "Threat Intelligence", "Python"],
+    category: "network_security",
+    categoryDisplay: "Network Security"
+  },
+  {
+    title: "Secure IoT Infrastructure",
+    description: "Designed a secure infrastructure for IoT devices in an industrial setting, implementing encryption, access controls, and continuous monitoring.",
+    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    technologies: ["IoT Security", "PKI", "Network Segmentation", "Endpoint Protection"],
+    category: "network_security",
+    categoryDisplay: "Network Security"
+  }
+];
+
+// Combined portfolio data for backward compatibility
+export const portfolioData = [...mobileWebCloudProjects, ...networkSecurityProjects];
 
 // Photography data
 export const photographyData = [

@@ -47,6 +47,8 @@ export const clientProjects = pgTable("client_projects", {
   image: text("image").notNull(),
   technologies: text("technologies").array().notNull(),
   link: text("link"),
+  category: text("category").notNull().default("web"), // 'web', 'mobile', 'cloud', 'network_security'
+  categoryDisplay: text("category_display").notNull().default("Web Development"),
   clientId: integer("client_id").references(() => users.id),
   status: text("status").notNull().default("in_progress"), // 'not_started', 'in_progress', 'review', 'completed'
   progress: integer("progress").notNull().default(0), // Percentage from 0-100
@@ -65,6 +67,8 @@ export const insertClientProjectSchema = createInsertSchema(clientProjects).pick
   image: true,
   technologies: true,
   link: true,
+  category: true,
+  categoryDisplay: true,
   clientId: true,
   status: true,
   progress: true,

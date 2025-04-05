@@ -27,6 +27,8 @@ export interface IStorage {
   // Client project methods
   getClientProject(id: number): Promise<ClientProject | undefined>;
   getClientProjects(limit?: number, featured?: boolean): Promise<ClientProject[]>;
+  getClientProjectsByCategory(category: string, limit?: number): Promise<ClientProject[]>;
+  getClientProjectsForClient(clientId: number): Promise<ClientProject[]>;
   createClientProject(project: InsertClientProject): Promise<ClientProject>;
   updateClientProject(id: number, project: Partial<InsertClientProject>): Promise<ClientProject | undefined>;
   deleteClientProject(id: number): Promise<boolean>;
@@ -85,6 +87,24 @@ export class DatabaseStorage implements IStorage {
     }
     
     return await query;
+  }
+  
+  async getClientProjectsByCategory(category: string, limit?: number): Promise<ClientProject[]> {
+    let query = db.select().from(clientProjects)
+      .where(eq(clientProjects.category, category))
+      .orderBy(desc(clientProjects.createdAt));
+    
+    if (limit) {
+      query = query.limit(limit);
+    }
+    
+    return await query;
+  }
+  
+  async getClientProjectsForClient(clientId: number): Promise<ClientProject[]> {
+    return await db.select().from(clientProjects)
+      .where(eq(clientProjects.clientId, clientId))
+      .orderBy(desc(clientProjects.createdAt));
   }
   
   async createClientProject(project: InsertClientProject): Promise<ClientProject> {
