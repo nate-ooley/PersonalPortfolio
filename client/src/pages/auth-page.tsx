@@ -30,7 +30,7 @@ import {
 } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Logo } from '@/components/Logo';
+import { AuthLogo } from '@/components/AuthLogo';
 
 // Login form schema
 const loginSchema = z.object({
@@ -99,7 +99,7 @@ export default function AuthPage() {
       <div className="flex items-center justify-center p-8">
         <div className="w-full max-w-md">
           <div className="mb-8 text-center">
-            <Logo className="mx-auto mb-4 text-3xl" />
+            <AuthLogo className="mx-auto mb-4 text-3xl" />
             <h1 className="text-2xl font-bold">Client Dashboard</h1>
           </div>
           
