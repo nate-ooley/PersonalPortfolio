@@ -16,7 +16,7 @@ export function Hero() {
               Hi, I'm <span className="text-primary">Nathan Ooley</span>
             </h1>
             <h2 className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-              Developer & Photographer based in Portland
+              Developer & Photographer based in Port Charlotte, Florida
             </h2>
             <p className="text-lg text-gray-700 max-w-xl">
               I create meaningful digital experiences and capture moments through my lens. Passionate about clean code, sailing, and beautiful imagery.

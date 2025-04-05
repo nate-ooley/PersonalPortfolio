@@ -185,7 +185,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900">Location</h4>
-                    <p className="text-gray-600 mt-1">Portland, OR</p>
+                    <p className="text-gray-600 mt-1">Port Charlotte, FL</p>
                   </div>
                 </div>
               </div>
