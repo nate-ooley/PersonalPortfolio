@@ -50,7 +50,7 @@ export function Header({ activeSection }: HeaderProps) {
     >
       <div className="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
         <a href="#home" className="text-xl font-bold text-gray-900 flex items-center gap-2">
-          <span className="text-primary">John Doe</span>
+          <span className="text-primary">Nathan Ooley</span>
         </a>
         
         {/* Desktop Navigation */}

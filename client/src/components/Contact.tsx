@@ -175,7 +175,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900">Email</h4>
-                    <p className="text-gray-600 mt-1">hello@johndoe.com</p>
+                    <p className="text-gray-600 mt-1">hello@nathanooley.com</p>
                   </div>
                 </div>
                 
@@ -185,7 +185,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900">Location</h4>
-                    <p className="text-gray-600 mt-1">San Francisco, CA</p>
+                    <p className="text-gray-600 mt-1">Portland, OR</p>
                   </div>
                 </div>
               </div>

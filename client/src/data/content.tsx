@@ -81,11 +81,11 @@ export const photographyData = [
 
 // About data
 export const aboutData = {
-  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  image: "/assets/IMG_5177.png", // Using Nathan's genmoji image
   paragraphs: [
-    "I'm a multidisciplinary designer with over 8 years of experience creating digital products and visual identities. My background spans UX/UI design, brand development, and photography, allowing me to approach projects with a comprehensive perspective.",
+    "I'm Nathan Ooley, a multidisciplinary designer and developer with over 8 years of experience creating digital products and visual identities. My background spans UX/UI design, brand development, and photography, allowing me to approach projects with a comprehensive perspective.",
     "My design philosophy centers on creating intuitive, accessible experiences that balance aesthetic beauty with practical functionality. I believe in designing with purpose, where every element serves the user's needs while reflecting the brand's identity.",
-    "When I'm not designing, you'll find me exploring the outdoors with my camera, experimenting with new cooking recipes, or attending local art exhibitions for inspiration."
+    "When I'm not designing, you'll find me exploring the outdoors with my camera, sailing along coastal waters, and experimenting with new coding projects for inspiration."
   ]
 };
 
@@ -103,9 +103,9 @@ export const skillsData = [
 
 // Contact data
 export const contactData = {
-  email: "hello@johndoe.com",
+  email: "hello@nathanooley.com",
   phone: "+1 (234) 567-890",
-  location: "New York, NY"
+  location: "Portland, OR"
 };
 
 // Playlist data

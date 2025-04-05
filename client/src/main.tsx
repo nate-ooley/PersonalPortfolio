@@ -5,11 +5,11 @@ import "./index.css";
 // Set up meta tags for SEO
 const head = document.head;
 const title = document.createElement("title");
-title.textContent = "John Doe | Developer & Photographer";
+title.textContent = "Nathan Ooley | Developer & Photographer";
 
 const meta = document.createElement("meta");
 meta.name = "description";
-meta.content = "Portfolio and photography showcase of John Doe, developer and photographer based in San Francisco.";
+meta.content = "Portfolio and photography showcase of Nathan Ooley, developer and photographer.";
 
 // Add Favicon
 const favicon = document.createElement("link");

@@ -7,13 +7,14 @@ export function About() {
     "Front-end Development",
     "UX/UI Design",
     "React & Next.js",
-    "Landscape Photography"
+    "Landscape Photography",
+    "Sailing"
   ];
 
   const interests = [
     "Travel Photography",
     "Web Accessibility",
-    "Hiking & Outdoors",
+    "Coastal Sailing",
     "Open Source Contributing"
   ];
 
@@ -44,8 +45,8 @@ export function About() {
           >
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                alt="Working at desk" 
+                src="/assets/IMG_5177.png" 
+                alt="Nathan Ooley portrait" 
                 className="rounded-lg shadow-lg object-cover w-full"
               />
               <div className="absolute bottom-0 right-0 bg-white p-4 shadow-lg rounded-tl-lg rounded-br-lg transform translate-x-4 translate-y-4">
@@ -63,10 +64,10 @@ export function About() {
           >
             <h3 className="text-2xl font-bold mb-4">Who am I?</h3>
             <p className="text-gray-700 mb-4">
-              I'm a passionate developer and photographer with a keen eye for detail. With over 5 years of experience in web development, I specialize in creating responsive, user-friendly websites and applications that combine functionality with aesthetic appeal.
+              I'm Nathan Ooley, a passionate developer and photographer with a keen eye for detail. With over 8 years of experience in web development, I specialize in creating responsive, user-friendly websites and applications that combine functionality with aesthetic appeal.
             </p>
             <p className="text-gray-700 mb-6">
-              When I'm not coding, you'll find me exploring the world through my camera lens, capturing moments and telling stories through photography. This dual passion allows me to approach projects with both technical precision and creative vision.
+              When I'm not coding, you'll find me exploring coastal waters through sailing or capturing moments through my camera lens. This combination of technical expertise and creative pursuits allows me to approach projects with both precision and vision.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
