@@ -23,6 +23,14 @@ export const experienceData = [
 // Portfolio data - Mobile/Web/Cloud Development Projects
 export const mobileWebCloudProjects = [
   {
+    title: "AI Business Agent Platform",
+    description: "Developed an intelligent platform allowing businesses to automate customer support, sales processes, and internal operations through customizable AI agents.",
+    image: "https://images.unsplash.com/photo-1679403766669-9c114a774e4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    technologies: ["LLM Integration", "Node.js", "React", "Vector Database", "AI Agent Orchestration"],
+    category: "web",
+    categoryDisplay: "AI Agent Automation"
+  },
+  {
     title: "Healthcare Patient Portal",
     description: "Developed a secure, HIPAA-compliant web application to allow patients to access medical records, schedule appointments, and communicate with healthcare providers.",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
@@ -58,6 +66,14 @@ export const mobileWebCloudProjects = [
 
 // Portfolio data - Network Security Projects
 export const networkSecurityProjects = [
+  {
+    title: "AI-Powered Threat Detection System",
+    description: "Designed and implemented an advanced threat detection system using AI agents to continuously monitor network traffic, identify potential security breaches, and respond autonomously.",
+    image: "https://images.unsplash.com/photo-1624969862644-791f3dc98927?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    technologies: ["AI Agent Automation", "Machine Learning", "Network Analysis", "Real-time Monitoring"],
+    category: "network_security",
+    categoryDisplay: "AI Security"
+  },
   {
     title: "Enterprise Network Security Audit",
     description: "Conducted comprehensive security assessment for a Fortune 500 company, identifying vulnerabilities and implementing remediation strategies.",

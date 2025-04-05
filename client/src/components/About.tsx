@@ -4,10 +4,10 @@ import { ButtonLink } from "./ui/button-link";
 
 export function About() {
   const developerSkills = [
+    "AI Agent Automation",
+    "LLM Integration",
     "Full-Stack Development",
     "Cloud Architecture",
-    "Mobile App Development",
-    "Network Security",
     "API Development"
   ];
 
@@ -75,9 +75,26 @@ export function About() {
             <p className="text-gray-700 mb-4">
               I'm Nathan Ooley, a multifaceted professional who thrives at the intersection of technology, adventure, and visual storytelling. My career as a developer has given me the analytical mindset to solve complex problems, while my experiences as a sailor and photographer have taught me the value of patience, perspective, and an eye for detail.
             </p>
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-700 mb-4">
               This unique combination allows me to approach technical challenges with both precision and creativity, whether I'm developing secure network solutions, crafting intuitive mobile applications, or capturing meaningful moments through my lens.
             </p>
+            <div className="bg-slate-50 p-4 rounded-lg border border-slate-200 mb-6 flex items-start gap-3">
+              <span className="mt-1 p-2 rounded-full bg-purple-100 text-purple-600">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </span>
+              <div>
+                <h4 className="text-lg font-semibold mb-2">Published Author</h4>
+                <p className="text-gray-600 mb-2">I'm also a published author, sharing my insights and expertise through written work.</p>
+                <a href="https://www.google.com/search?q=nathan+ooley+book" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-purple-600 hover:text-purple-800">
+                  Find my book online
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </div>
             
             <div className="space-y-8 mb-8">
               <div className="flex items-start gap-3">
@@ -86,7 +103,7 @@ export function About() {
                 </span>
                 <div>
                   <h4 className="text-lg font-semibold mb-2">Developer</h4>
-                  <p className="text-gray-600 mb-2">Specializing in full-stack development, cloud solutions, and network security with over 8 years of professional experience.</p>
+                  <p className="text-gray-600 mb-2">Pioneering in <span className="font-medium text-blue-600">AI agent automation</span> for businesses. Helping companies leverage intelligent systems to transform operations, streamline workflows, and enhance decision-making.</p>
                   <div className="flex flex-wrap gap-2">
                     {developerSkills.map((skill, index) => (
                       <span key={index} className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">
