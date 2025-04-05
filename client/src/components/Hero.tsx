@@ -16,27 +16,27 @@ export function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Hi, I'm <span className="text-primary">Nathan Ooley</span>
             </h1>
-            <div className="flex flex-wrap items-center gap-3 md:gap-5">
-              <div className="flex items-center gap-1">
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50">
                 <Code className="h-5 w-5 text-blue-600" />
-                <h2 className="text-xl md:text-2xl text-blue-600 font-medium">Developer</h2>
+                <h2 className="text-xl text-blue-600 font-medium">Developer</h2>
               </div>
-              <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-              <div className="flex items-center gap-1">
+              
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-50">
                 <Anchor className="h-5 w-5 text-teal-600" />
-                <h2 className="text-xl md:text-2xl text-teal-600 font-medium">Sailor</h2>
+                <h2 className="text-xl text-teal-600 font-medium">Sailor</h2>
               </div>
-              <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-              <div className="flex items-center gap-1">
+              
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50">
                 <Camera className="h-5 w-5 text-amber-600" />
-                <h2 className="text-xl md:text-2xl text-amber-600 font-medium">Photographer</h2>
+                <h2 className="text-xl text-amber-600 font-medium">Photographer</h2>
               </div>
-              <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-              <div className="flex items-center gap-1">
+              
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-50">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
-                <h2 className="text-xl md:text-2xl text-purple-600 font-medium">Author</h2>
+                <h2 className="text-xl text-purple-600 font-medium">Author</h2>
               </div>
             </div>
             <p className="text-lg text-gray-700 max-w-xl">
