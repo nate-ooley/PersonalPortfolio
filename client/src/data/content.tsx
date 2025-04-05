@@ -104,8 +104,7 @@ export const skillsData = [
 // Contact data
 export const contactData = {
   email: "hello@nathanooley.com",
-  phone: "+1 (234) 567-890",
-  location: "Port Charlotte, FL"
+  phone: "+1 (234) 567-890"
 };
 
 // Playlist data

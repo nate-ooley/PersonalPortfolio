@@ -179,15 +179,7 @@ export function Contact() {
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary bg-opacity-10 p-3 rounded-full text-primary">
-                    <MapPin className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900">Location</h4>
-                    <p className="text-gray-600 mt-1">Port Charlotte, FL</p>
-                  </div>
-                </div>
+
               </div>
               
               <div className="mt-10">
