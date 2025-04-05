@@ -100,8 +100,7 @@ export default function AuthPage() {
         <div className="w-full max-w-md">
           <div className="mb-8 text-center">
             <Logo className="mx-auto mb-4 text-3xl" />
-            <h1 className="text-2xl font-bold">Nathan Ooley</h1>
-            <p className="text-muted-foreground">Sign in to access client projects and more.</p>
+            <h1 className="text-2xl font-bold">Client Dashboard</h1>
           </div>
           
           <Tabs value={activeTab} onValueChange={setActiveTab}>
@@ -115,7 +114,7 @@ export default function AuthPage() {
                 <CardHeader>
                   <CardTitle>Login</CardTitle>
                   <CardDescription>
-                    Enter your credentials to access your account
+                    Enter your username and password
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -178,7 +177,7 @@ export default function AuthPage() {
                 <CardHeader>
                   <CardTitle>Register</CardTitle>
                   <CardDescription>
-                    Create a new account to access client projects
+                    Create your account
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
