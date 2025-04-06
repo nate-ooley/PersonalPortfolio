@@ -41,8 +41,6 @@ export function Header({ activeSection }: HeaderProps) {
     { name: "Experience", href: "#experience" },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Photography", href: "#photography" },
-    { name: "Playlist", href: "#playlist" },
-    { name: "Sailing", href: "#sailing" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
   ];
@@ -66,7 +64,7 @@ export function Header({ activeSection }: HeaderProps) {
         </Link>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-10">
           {isHomePage ? (
             // When on the home page, use anchor links
             navLinks.map((link) => (
@@ -74,7 +72,7 @@ export function Header({ activeSection }: HeaderProps) {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "font-medium transition-colors",
+                  "font-medium text-base transition-colors",
                   activeSection === link.href.substring(1)
                     ? "text-primary"
                     : "text-gray-700 hover:text-primary"
@@ -87,7 +85,7 @@ export function Header({ activeSection }: HeaderProps) {
             // When not on the home page, use the root link
             <Link 
               href="/" 
-              className="font-medium text-gray-700 hover:text-primary transition-colors"
+              className="font-medium text-base text-gray-700 hover:text-primary transition-colors"
             >
               Home
             </Link>
@@ -95,7 +93,7 @@ export function Header({ activeSection }: HeaderProps) {
           <Link 
             href="/blog" 
             className={cn(
-              "font-medium transition-colors",
+              "font-medium text-base transition-colors",
               location === "/blog" ? "text-primary" : "text-gray-700 hover:text-primary"
             )}
           >
@@ -105,7 +103,7 @@ export function Header({ activeSection }: HeaderProps) {
             <Link 
               href="/dashboard" 
               className={cn(
-                "font-medium transition-colors",
+                "font-medium text-base transition-colors",
                 location === "/dashboard" ? "text-primary" : "text-gray-700 hover:text-primary"
               )}
             >
@@ -115,7 +113,7 @@ export function Header({ activeSection }: HeaderProps) {
             <Link 
               href="/auth" 
               className={cn(
-                "font-medium transition-colors",
+                "font-medium text-base transition-colors",
                 location === "/auth" ? "text-primary" : "text-gray-700 hover:text-primary"
               )}
             >
