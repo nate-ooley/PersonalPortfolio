@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Code, Anchor, Camera } from "lucide-react";
+import nateEmojiPath from "@assets/nateEmoji.png";
 
 export function Hero() {
   return (
@@ -58,7 +59,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <img 
-              src="/assets/nateEmoji.png" 
+              src={nateEmojiPath} 
               alt="Nathan Ooley portrait" 
               className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover mx-auto border-4 border-white shadow-lg"
             />
