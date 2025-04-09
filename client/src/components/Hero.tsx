@@ -58,7 +58,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <img 
-              src="/assets/IMG_5177.png" 
+              src="/assets/nateEmoji.png" 
               alt="Nathan Ooley portrait" 
               className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover mx-auto border-4 border-white shadow-lg"
             />
