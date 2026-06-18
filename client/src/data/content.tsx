@@ -177,8 +177,8 @@ export const skillsData = [
 
 // Contact data
 export const contactData = {
-  email: "hello@nathanooley.com",
-  phone: "+1 (234) 567-890"
+  email: "your@email.com",
+  phone: "+1 (555) 000-0000"
 };
 
 // Playlist data

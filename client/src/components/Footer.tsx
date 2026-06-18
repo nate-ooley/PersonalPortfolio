@@ -24,8 +24,8 @@ export function Footer() {
             <div>
               <h3 className="text-lg font-semibold mb-3">Contact</h3>
               <ul className="space-y-2">
-                <li><a href="mailto:hello@johndoe.com" className="text-gray-400 hover:text-white transition-colors">hello@johndoe.com</a></li>
-                <li><a href="tel:+15551234567" className="text-gray-400 hover:text-white transition-colors">+1 (555) 123-4567</a></li>
+                <li><a href="mailto:your@email.com" className="text-gray-400 hover:text-white transition-colors">your@email.com</a></li>
+                <li><a href="tel:+15550000000" className="text-gray-400 hover:text-white transition-colors">+1 (555) 000-0000</a></li>
                 <li><span className="text-gray-400">San Francisco, CA</span></li>
               </ul>
             </div>

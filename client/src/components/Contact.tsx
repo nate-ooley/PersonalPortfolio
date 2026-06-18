@@ -165,7 +165,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900">Phone</h4>
-                    <p className="text-gray-600 mt-1">+1 (555) 123-4567</p>
+                    <p className="text-gray-600 mt-1">+1 (555) 000-0000</p>
                   </div>
                 </div>
                 
@@ -175,7 +175,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900">Email</h4>
-                    <p className="text-gray-600 mt-1">hello@nathanooley.com</p>
+                    <p className="text-gray-600 mt-1">your@email.com</p>
                   </div>
                 </div>
                 
